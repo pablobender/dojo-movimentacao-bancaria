@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  get 'contas_internas/new'
+  get 'conta_internas/new'
 
-  get 'contas_internas/index'
+  get 'conta_internas' => 'conta_internas#index', as: :conta_internas
+  post 'conta_internas' => 'conta_internas#create', as: nil
 
+  get 'conta_interna/:id' => 'conta_internas#show', as: :conta_interna
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
