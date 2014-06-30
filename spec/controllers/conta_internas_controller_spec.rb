@@ -7,6 +7,9 @@ RSpec.describe ContaInternasController, :type => :controller do
       get :index
       expect(response).to be_success
     end
+    it "should route_to '/conta_internas'" do
+      expect(get: "/conta_internas").to route_to(controller: "conta_internas", action: "index")
+    end
   end
 
   describe "GET 'new'" do
@@ -17,6 +20,9 @@ RSpec.describe ContaInternasController, :type => :controller do
     it "should assign conta_interna" do
       get :new
       expect(assigns(:conta)).to be_a_new(ContaInterna)
+    end
+    it "should route_to '/conta_internas/new'" do
+      expect(get: "/conta_internas/new").to route_to(controller: "conta_internas", action: "new")
     end
   end
 
@@ -40,6 +46,9 @@ RSpec.describe ContaInternasController, :type => :controller do
         expect(@conta.persisted?).to be_eql(true)
       end
     end
+    it "should route_to '/conta_internas'" do
+      expect(post: "/conta_internas").to route_to(controller: "conta_internas", action: "create")
+    end
   end
 
   describe "GET 'show'" do
@@ -54,6 +63,9 @@ RSpec.describe ContaInternasController, :type => :controller do
     it "should assign conta_interna" do
       get :show, id: 1
       expect(assigns(:conta)).to be_a(ContaInterna)
+    end
+    it "should route_to '/conta_interna/*id*'" do
+      expect(get: "/conta_interna/123").to route_to(controller: "conta_internas", action: "show", id: "123")
     end
   end
 end
