@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'contas_internas/new'
+
   get 'contas_internas/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
