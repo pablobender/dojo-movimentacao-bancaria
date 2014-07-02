@@ -10,6 +10,11 @@ RSpec.describe ContaInternasController, :type => :controller do
     it "should route_to '/conta_internas'" do
       expect(get: "/conta_internas").to route_to(controller: "conta_internas", action: "index")
     end
+    it "should assign @contas" do
+      get :index
+      contas = FactoryGirl.create_list :conta_interna, 2
+      expect(assigns(:contas)).to include(*contas)
+    end
   end
 
   describe "GET 'new'" do

@@ -1,5 +1,6 @@
 class ContaInternasController < ApplicationController
   def index
+    @contas = ContaInterna.all
   end
 
   def new

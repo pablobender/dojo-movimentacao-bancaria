@@ -1,2 +1,9 @@
-<h1>ContasInternas#index</h1>
-<p>Find me in app/views/contas_internas/index.html.erb</p>
+<h2>Contas Internas</h2>
+<ul>
+  <% @contas.each do |conta| %>
+    <li> <div style="border: 1px solid gray; padding: 5px; margin:5px;">
+      <span>Nome:</span> <span><%= conta.nome %></span><br/>
+      <span>Saldo:</span> <span><%= conta.saldo %></span>
+  </div></li>
+  <% end %>
+  </ul>
