@@ -14,7 +14,7 @@ RSpec.describe ContaInternasController, :type => :controller do
 
   describe "GET 'new'" do
     it "returns http success" do
-      get :new
+      get(:new)
       expect(response).to be_success
     end
     it "should assign conta_interna" do
@@ -22,7 +22,7 @@ RSpec.describe ContaInternasController, :type => :controller do
       expect(assigns(:conta)).to be_a_new(ContaInterna)
     end
     it "should route_to '/conta_internas/new'" do
-      expect(get: "/conta_internas/new").to route_to(controller: "conta_internas", action: "new")
+      expect(get: "/conta_internas/new" ).to route_to(controller: "conta_internas", action: "new")
     end
   end
 
